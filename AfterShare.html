@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Envision: Home</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="afterLogin" onload=avaliabilityStatus()>
+  <nav>
+    <div class="navigationContainerAfterLogin">
+      <img src="halfLogo.jpg" class="halfLogo">
+      <h2>Envision</h2>    
+
+      <div class="shareExperience">
+        <button onclick=openShare() class="navigationButton">Share Your Experience</button>
+
+      </div>
+
+      <div class="yourExperience" id="yourExperience">
+
+        <script>
+          function openShare() {
+            document.getElementById('yourExperience').style.display='block';
+          }
+        </script>
+
+        <form>
+
+          <div class = "shareBackground">
+            <img src="https://htmlcolorcodes.com/assets/images/colors/black-color-solid-background-1920x1080.png">
+          </div>
+
+          <div class="shareExperienceContent">
+            <span class="closeShareBlock" onclick=closeShareBlock()>&times;</span>
+
+            <script>
+              function closeShareBlock() {
+                onclick=document.getElementById("yourExperience").style.display='none';
+              }
+            </script>
+
+            <h1>Share Your Experience</h1>
+            <h4>Name</h4>
+            <input id="name" type="text" placeholder="Please Enter First and Last Name">
+
+            <h4>Describe Your Experience</h4>
+            <input id="content" type="text" placeholder="Please Enter Your Experience">
+
+            <h4>Tip 1</h4>
+            <input id="tip1" type="text" placeholder="Please Enter Your Tip #1">
+            <h4>Tip 2</h4>
+            <input id="tip2" type="text" placeholder="Please Enter Your Tip #2">
+            <h4>Tip 3</h4>
+            <input id="tip3" type="text" placeholder="Please Enter Your Tip #3">
+
+            <h4>Gmail</h4>
+            <input id="gmail" type="text" placeholder="Please Enter Your Gmail")">
+            <h4>Instagram</h4>
+            <input id="instagram" type="text" placeholder="Please Enter Your Contacts Instagram Username")">
+            <h4>Twitter</h4>
+            <input id="twitter" type="text" placeholder="Please Enter Your Twitter")">
+
+            <button onclick=post()>Share</button>
+          </div>
+
+        </form>
+      </div>
+
+
+
+        <div class="searchBar">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Search_Icon.svg" onclick=search()>
+          <input id="search" type="text" placeholder="Search for Profiles">
+        </div>
+
+        <div class="logout">
+          <button onclick=logout() class="navigationButton">Log out</button>
+        </div>
+
+      </div>
+  </nav>
+
+  <div class="welcomeUser">
+    <h3>Welcome <span id="userUsername"></span>! </h3>
+
+    <script>
+      var username = localStorage.getItem("Username");
+      document.getElementById('userUsername').innerHTML = username;
+    </script>
+
+    <label class="avaliabilitySwitch">
+      <input id="avaliability" type="checkbox" checked="checked" onclick=avaliabilityStatus()>
+      <span class="slider"></span>
+    </label>
+
+    <p id="status" class="switchStatus"></p>
+
+    <script>
+      function avaliabilityStatus() {
+        let avaliability = document.getElementById('avaliability').checked;
+        if (avaliability == false) {
+          document.getElementById("status").innerHTML = "Do not disturb";
+          localStorage.setItem("Avaliability", "Do not disturb");
+        }
+        else {
+          document.getElementById("status").innerHTML = "Free to respond";
+          localStorage.setItem("Avaliability", "Free to respond");
+        }
+      }
+    </script>
+
+    <p class = "switchDescription">Indicate your avaliable to others</p>
+  </div>
+
+
+
+
+
+
+  <!--making the profiles-->
+
+  <div class="profiles">
+    <h1>Discover Experiences</h1>
+
+    <div class="you" id="your">
+      <h4 id="Name"></h4>
+
+      <p id="Content"></p>
+
+      <p>Some tips I would give for current middle/high school students are:</p>
+      <ul>
+        <li><span id="Tip1"></span></li>
+        <li><span id="Tip2"></span></li>
+        <li><span id="Tip3"></span></li>
+      </ul>
+
+      <p class="contacts" style="padding-top:20px;">My contact info:</p>
+      <p class="contacts" style="margin-bottom:0;">Gmail: <span id="Gmail"></span></p>
+      <p class="contacts" style="margin-bottom:0; margin:0; padding-top:0;">Instagram: <span id="Instagram"></span></p>
+      <p class="contacts" style="margin:0; padding-top:0;">Twitter: <span id="Twitter"></span></p>
+
+      <p style="padding-top:20px;" class="personStatus" id="Avaliability"></p>
+
+      <script>
+        var free = localStorage.getItem("Avaliability");
+        document.getElementById("Avaliability").innerHTML = free;
+
+        var name = localStorage.getItem("Name");
+        document.getElementById('Name').innerHTML = name;
+
+        var content = localStorage.getItem("Content");
+        document.getElementById('Content').innerHTML = content;
+
+        var tipOne = localStorage.getItem("Tip1");
+        document.getElementById('Tip1').innerHTML = tipOne;
+        var tipTwo = localStorage.getItem("Tip2");
+        document.getElementById('Tip2').innerHTML = tipTwo;
+        var tipThree = localStorage.getItem("Tip3");
+        document.getElementById('Tip3').innerHTML = tipThree;
+
+        var gmail = localStorage.getItem("Gmail");
+        document.getElementById('Gmail').innerHTML = gmail;
+        var instagram = localStorage.getItem("Instagram");
+        document.getElementById('Instagram').innerHTML = instagram;
+        var twitter = localStorage.getItem("Twitter");
+        document.getElementById('Twitter').innerHTML = twitter;
+      </script>
+
+
+    </div>
+
+    <div class="person1 filterProfile james adams free harvard university undergradate student law internship fidelity investments assistant fourth year cambridge massachusetts
+ united states usa us">
+      <h4>James Adams</h4>
+      <p>Hello! I am a fourth year undergradrate student at Harvard University studying law. I currently have an internship at Fidelity Investments as an assistant.</p>
+      <p>Some tips I would give for current middle/high school students are:</p>
+      <ul>
+        <li>Start developing good habits as these are essential for success in your studies, especially as you move to higher grades</li>
+        <li>Get enough sleep and exercise (your body is the most important tool for success)</li>
+        <li>Get involved in extracurriculars as they are provide great opportunities for you to find your passion and develop skills</li>
+      </ul>
+
+      <p>Suggested Traits: Good at Memorizing, Outgoing, Strong reader.</p>
+
+      <p>Good luck with post secondary! It's definitely a wonderful experience!</p>
+
+      <p class="contacts" style="padding-top:20px;">My contact info:</p>
+      <p class="contacts" style="margin-bottom:0;">Gmail: jamesadams@gmail.com</p>
+      <p class="contacts" style="margin-bottom:0; margin:0; padding-top:0;">Instagram: @jamesadams</p>
+      <p class="contacts" style="margin:0; padding-top:0;">Twitter: @jamesadams2</p>
+
+      <p style="padding-top:20px;" class="personStatus">Free to respond</p>
+    </div>
+
+    <div class="person2 filterProfile mary brooks free university of toronto st.george campus uoft alumni financial economics finance internship sun life finance department undergraduate toronto ontario canada">
+      <h4>Mary Brooks</h4>
+      <p>Hey! I am an alumni at University of Toronto (St.George Campus) and studied financial economics. During my studies I did an internship at Sun Life in the finance department. </p>
+      <p>Some tips I would give for current middle/high school students are:</p>
+      <ul>
+        <li>Makesure you look into the mandatory courses for this program and plan your schedule ahead of time just so that you don't end up in a situation where you missed a course.</li>
+        <li>Have a life other than school work. We are gonna do school work our whole life so try to find a way to balance it with your social life.</li>
+      </ul>
+      <p>Suggested Traits: Detail Oriented, Good with numbers, Comfortable with Spreadsheets.</p>
+      <p>Have fun! You will do great!</p>
+      <p class="contacts" style="padding-top:20px;">My contact info:</p>
+      <p class="contacts" style="margin-bottom:0;">Gmail: maryb@gmail.com</p>
+      <p class="contacts" style="margin-bottom:0; margin:0; padding-top:0;">Instagram: @mary_brooks</p>
+      <p class="contacts" style="margin:0; padding-top:0;">Twitter: @marybrooks</p>
+      <p style="padding-top:20px;" class="personStatus">Free to respond</p>
+    </div>
+
+    <div class="person3 filterProfile micheal smith student western university volunteer medical science undergraduate third year london ontario canada">
+      <h4>Micheal Smith</h4>
+      <p>Hey! I am a 3rd year in Western University studying Medical Science</p>
+      <p>Some tips:</p>
+      <ul>
+        <li>Volunteer in places where you are helping others such as senior homes.</li>
+        <li>Develop good study habits and figure out how you can make your brain remeber information.</li>
+         <li>Learn to organize your time well so that you don't stress our assignments at the last minute.</li>
+      </ul>
+      <p>Suggested Traits: Love helping others, enjoy memorizing, friendly, outgoing.</p>
+      <p>Good luck with your future endeavors!</p>
+      <p class="contacts" style="padding-top:20px;">My contact info:</p>
+      <p class="contacts" style="margin-bottom:0;">Gmail: michael.smith@gmail.com</p>
+      <p class="contacts" style="margin-bottom:0; margin:0; padding-top:0;">Instagram: @michaelsmith12</p>
+      <p class="contacts" style="margin:0; padding-top:0;">Twitter: @michael_smith</p>
+      <p style="padding-top:20px;" class="personStatus">Do not distrub</p>
+    </div>
+
+    <div class="person4 filterProfile undergraduate patricia barlowe free alumni centennial college electrical engineering technician electrical engineer at syntronic job ontario canada"">
+      <h4>Patricia Barlowe</h4>
+      <p>Hey! I am an alumni at Centennial College and studied Electrical Engineering Technician. I currently work as an electrical engineer at Syntronic.</p>
+      <p>Some of my most crucial tips:</p>
+      <ul>
+        <li>Never sacrifice your sleep. Instead manage your time wisely so that you get enough sleep while finishing all your homework on time.</li>
+         <li>Start planning your applications ahead of time. Don't wait for the last minute.</li>
+        <li>Makesure to enjoy your college experience!</li>
+      </ul>
+      <p>Suggested Traits: Steady hands, concentration.</p>
+      <p>Have Fun!</p>
+      <p class="contacts" style="padding-top:20px;">My contact info:</p>
+      <p class="contacts" style="margin-bottom:0;">Gmail: PatriciaB@gmail.com</p>
+      <p class="contacts" style="margin-bottom:0; margin:0; padding-top:0;">Instagram: @patbarl15</p>
+      <p class="contacts" style="margin:0; padding-top:0;">Twitter: @patbarl15</p>
+      <p style="padding-top:20px;" class="personStatus">Free to respond</p>
+    </div>
+
+    <div class="person5 filterProfile robert walton free student univeristy of waterloo chemical engineering undergraduate university ontario canada">
+      <h4>Robert Walton</h4>
+      <p>Hey! I am a 2nd year student at Waterloo studying Chemical Engineering.</p>
+      <p>Some of my most crucial tips:</p>
+      <ul>
+        <li>Make sure you pick a program you know you will be interested in. I suggest that you use your high school courses to determine what you may or may not like.</li>
+         <li>Partake in extracurriculars because it will help you gain friends.</li>
+        <li>University is a big jump from highschool. If you feel that you are not smart enough, don't worry everyone feels that when they transition into university.</li>
+      </ul>
+      <p>Suggested Traits: Cautious, Critical thinker, Enjoy Chemistry.</p>
+      <p>Good luck with your studies!</p>
+      <p class="contacts" style="padding-top:20px;">My contact info:</p>
+      <p class="contacts" style="margin-bottom:0;">Gmail: robertw@gmail.com</p>
+      <p class="contacts" style="margin-bottom:0; margin:0; padding-top:0;">Instagram: @robert.w34</p>
+      <p class="contacts" style="margin:0; padding-top:0;">Twitter: @rob_will</p>
+      <p style="padding-top:20px;" class="personStatus">Free to respond</p>
+    </div>
+
+    <div class="person6 filterProfile jennifer martin free student university internship undergraduate second year university of Washington computer science td mesomat tigercat industries inc seattle us usa united states">
+      <h4>Jennifer Martin</h4>
+      <p>Hey! I am a 2nd year at University of Washington for the Computer Science program. I had many co-op opportunities in companies such as TD, MesoMat and Tigercat Industries Inc.</p>
+      <p>My life changing tips:</p>
+      <ul>
+        <li>Makesure you are ready to stare at screens for long hours.</li>
+         <li>Start learning to code before university. Take computer science in high school.</li>
+        <li>Think about housing arrangements ahead of time. For example, rental.</li>
+      </ul>
+      <p>Suggested Traits: Fast typer, Critical thinker, Problem solver, patience.</p>
+      <p>I really like the university experience and I am sure you will also enjoy it!</p>
+      <p class="contacts" style="padding-top:20px;">My contact info:</p>
+      <p class="contacts" style="margin-bottom:0;">Gmail: robertw@gmail.com</p>
+      <p class="contacts" style="margin-bottom:0; margin:0; padding-top:0;">Instagram: @robert.w34</p>
+      <p class="contacts" style="margin:0; padding-top:0;">Twitter: @rob_will</p>
+      <p style="padding-top:20px;" class="personStatus">Free to respond</p>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <!--filter profiles-->
+
+  <div class="filter">
+
+    <h3>Filter</h3>
+
+    <div class="filterFunction">
+      <button onclick=filter("all") class="all">View All Profiles</button>
+
+      <button onclick=filter("free") class="free">Free to Respond Users</button>
+
+      <button onclick=filter("student") class="student">See Student</button>
+      <button onclick=filter("alumni") class="alumni">See Alumni</button>
+
+      <button onclick=filter("college") class="college">About College</button>
+      <button onclick=filter("university") class="university">About University</button>
+
+      <button onclick=filter("internship") class="internship">Find Internship</button>
+      <button onclick=filter("job") class="job">Find Job</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

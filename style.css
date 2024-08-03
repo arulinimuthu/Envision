@@ -1,0 +1,610 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body{
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.beforeLogin{
+  background-color: #adc3e6;
+}
+
+.afterLogin{
+  background-color: #f5f5f5;
+}
+
+nav {
+  left: 0;
+  width: 100%;
+  height: 80px;
+  top: 0;
+  background: #ffffff;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #cccccc;
+  z-index: 1;
+  position: fixed;
+}
+
+nav .navigationContainer, nav .navigationContainerAfterLogin{
+  display: flex;
+  align-items: center;
+  /*justify-content: space-between;*/
+}
+
+.halfLogo{
+  position: fixed;
+  left: 25px;
+  top: 25px;
+  width: 100px;
+  z-index: 1;
+}
+
+.navigationContainer h2, .navigationContainerAfterLogin h2{
+  position: fixed;
+  left: 130px;
+  top: -5px;
+  font-size: 35px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+button, input{
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+}
+
+button {
+  text-align: center;
+}
+
+button:hover, input:hover{
+  opacity: 0.8;
+}
+
+
+
+
+
+/* Formatting for index.html */
+
+.loginButton button {
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  z-index: 1;
+  background-color: #a7a7e2;
+  color: white;
+  width: 120px;
+  height: 40px;
+}
+
+.loginBackground {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.5;
+}
+
+.loginBlock {
+  display: none;
+}
+
+.loginBlockContent {
+  z-index: 3;
+  padding: 5%;
+  background-color: white;
+  position: fixed;
+  top: 20%;
+  bottom: 20%;
+  left: 25%;
+  right: 25%;
+  border-radius: 20px;
+}
+
+.loginBlockContent input[type="text"]  {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.loginBlockContent button {
+  background-color: #a7a7e2;
+  color: white;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 20px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+  z-index: 3;
+}
+
+.loginBlockContent input[type="checkbox"]  {
+  margin: 12px;
+  z-index: 3;
+}
+
+.loginBlockContent img  {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-bottom: 2%;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+  z-index: 3;
+}
+
+.closeLoginBlock {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  top: 10px;
+  right: 20px;
+}
+
+
+
+
+/* Formatting for AfterLogin.html */
+.searchBar {
+  position: fixed;
+  top: 25px;
+  right: 175px;
+  z-index: 1;
+  border: 1px solid #cccccc;
+  border-radius: 20px;
+  padding: 5px;
+  justify-content: space-between;
+  display: flex;
+  align-items: center;
+}
+
+.searchBar:hover {
+  opacity: 0.8;
+}
+
+.searchBar img{
+  z-index: 1;
+  color: white;
+  height: 25px;
+  width: 40px;
+}
+
+.searchBar input{
+  width: 300px;
+  height: 25px;
+  border-color: white;
+}
+
+.navigationButton {
+  position: fixed;
+  top: 25px;
+  z-index: 1;
+  background-color: #a7a7e2;
+  color: white;
+}
+
+/*
+.discoverExperiences button{
+  right: 760px;
+  width: 200px;
+  height: 40px;
+}*/
+
+.shareExperience button{
+  right: 550px;
+  width: 200px;
+  height: 40px;
+}
+
+.logout button{
+  position: fixed;
+  right: 25px;
+  top: 25px;
+  z-index: 1;
+  background-color: #a7a7e2;
+  color: white;
+  width: 120px;
+  height: 40px;
+}
+
+
+/*Formatting Home Content*/
+
+.welcomeUser {
+  background: white;
+  position: fixed;
+  width: 300px;
+  height: 90px;
+  padding: 30px;
+  border-radius: 20px;
+  top: 130px;
+  left: 50px;
+}
+
+h3 {
+  position: fixed;
+  top: 140px;
+}
+
+.switchDescription {
+  color: #cccccc;
+  position: fixed;
+  top: 225px;
+  font-size: 14px;
+}
+
+.switchStatus {
+  color: #545454;
+  position: fixed;
+  top: 192px;
+  left: 140px;
+  font-size: 14px;
+}
+
+.avaliabilitySwitch input{
+  display: none;
+}
+
+.avaliabilitySwitch {
+  position: fixed;
+  display: inline-block;
+  top: 200px;
+  width: 52px;
+  height: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  background-color: white;
+  border-radius: 30px;
+  width: 20px;
+  height: 20px;
+  left: 5px;
+  top: 5px;
+  transition: 0.2s;
+  content: "";
+}
+
+.slider {
+  position: absolute;
+  background-color: #cccccc;
+  border-radius: 30px;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  transition: 0.2s;
+}
+
+.avaliabilitySwitch input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.avaliabilitySwitch input:checked + .slider {
+  background-color: #537cf9;
+}
+
+
+
+
+/*Profiles*/
+
+.profiles h1{
+  color: #212121;
+  position: relative;
+  font-size: 50px;
+  right: -480px;
+  top: 100px;
+}
+
+.you {
+  background: white;
+  position: relative;
+  width: 65vw;
+  padding: 50px;
+  border: 10px solid #f5f5f5;
+  border-radius: 20px;
+  top: 100px;
+  right: -480px;
+}
+
+.person1 {
+  background: white;
+  position: relative;
+  width: 65vw;
+  padding: 50px;
+  border: 10px solid #f5f5f5;
+  border-radius: 20px;
+  top: 100px;
+  right: -480px;
+}
+
+.person2 {
+  background: white;
+  position: relative;
+  width: 65vw;
+  padding: 50px;
+  border: 10px solid #f5f5f5;
+  border-radius: 20px;
+  top: 100px;
+  right: -480px;
+}
+
+
+.person3 {
+  background: white;
+  position: relative;
+  width: 65vw;
+  padding: 50px;
+  border: 10px solid #f5f5f5;
+  border-radius: 20px;
+  top: 100px;
+  right: -480px;
+}
+
+
+.person4 {
+  background: white;
+  position: relative;
+  width: 65vw;
+  padding: 50px;
+  border: 10px solid #f5f5f5;
+  border-radius: 20px;
+  top: 100px;
+  right: -480px;
+}
+
+
+.person5 {
+  background: white;
+  position: relative;
+  width: 65vw;
+  padding: 50px;
+  border: 10px solid #f5f5f5;
+  border-radius: 20px;
+  top: 100px;
+  right: -480px;
+}
+
+
+.person6 {
+  background: #ffffff;
+  position: relative;
+  width: 65vw;
+  padding: 50px;
+  border: 10px solid #f5f5f5;
+  border-radius: 20px;
+  top: 100px;
+  right: -480px;
+}
+
+h4{
+  font-size: 20px;
+}
+
+.contacts {
+  color: #808080;
+}
+
+.personStatus {
+  color: #505fce;
+}
+
+
+
+
+/* Filter */
+
+.filter {
+  background: white;
+  position: fixed;
+  width: 300px;
+  height: 390px;
+  padding: 30px;
+  border-radius: 20px;
+  top: 300px;
+  left: 50px;
+}
+
+.filter h3 {
+  position: fixed;
+  top: 310px;
+}
+
+.filterFunction{
+  position: fixed;
+  width: 300px;
+  padding: 30px;
+  top: 330px;
+  left: 50px;
+}
+
+.filter button{
+  display: inline-block;
+  background-color: #ffffff;
+  border: white;
+  padding: 15px;
+  width: 300px;
+  font-size: 15px;
+}
+
+.filter button:hover {
+  background-color: #dddddd;
+}
+
+
+
+
+/* Formatting Share Experience */
+
+.yourExperience {
+  display: none;
+}
+
+.shareBackground {
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  opacity: 0.5;
+}
+
+.shareExperienceContent {
+  z-index: 3;
+  padding: 30px;
+  padding-right: 50px;
+  padding-left: 50px;
+  background-color: white;
+  position: fixed;
+  top: 0%;
+  bottom: 0%;
+  left: 0%;
+  right: 0%;
+  border-radius: 20px;
+}
+
+.shareExperienceContent h4 {
+  margin-bottom: 5px;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+.shareExperienceContent input[type="text"]  {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 10px;
+  z-index: 1;
+}
+
+.shareExperienceContent button {
+  position: fixed;
+  background-color: #a7a7e2;
+  color: white;
+  display: inline-block;
+  box-sizing: border-box;
+  width: 300px;
+  height: 40px;
+  top: 40px;
+  right: 80px;
+  z-index: 3;
+}
+
+.closeShareBlock {
+  position: absolute;
+  font-size: 30px;
+  font-weight: bold;
+  top: 10px;
+  right: 20px;
+}
+
+
+
+/* Change for different screen size */
+
+@media screen and (max-width: 500px) {
+  .loginBlockContent {
+    left: 5%;
+    right: 5%;
+    top: 28%;
+    bottom: 28%;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .profiles h1{
+    right: -470px;
+  }
+  .person1{
+    width: 55vw;
+    right: -470px;
+  }
+  .person2{
+    width: 55vw;
+    right: -470px;
+  }
+  .person3{
+    width: 55vw;
+    right: -470px;
+  }
+  .person4{
+    width: 55vw;
+    right: -470px;
+  }
+  .person5{
+    width: 55vw;
+    right: -470px;
+  }
+  .person6{
+    width: 55vw;
+    right: -470px;
+  }
+}
+
+@media screen and (max-height: 800px) {
+  .loginBlockContent {
+    top: 17%;
+    bottom: 17%;
+  }
+}
+
+
+
+
+/*Before Login Designs*/
+
+.image {
+  position: relative;
+  right: 7vw;
+  left: 7vw;
+  width: 86vw;
+  border-bottom: 15px solid #ffffff;
+}
+
+.transparent{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
+  margin-top: 200px;
+}
+
+.LoginWelcome{
+  position: relative;
+  top: 140px;
+  margin-top: 50px;
+  text-align: center;
+  font-size: 80px;
+  color: #ffffff;
+}
+
+.Description{
+  color: #ffffff;
+  opacity: 0.9;
+  position: relative;
+  top: 20px;
+  padding-left: 120px;
+  padding-right: 120px;
+  text-align: center;
+  font-weight: normal;
+  font-size: 30px;
+}

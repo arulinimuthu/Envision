@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Envision: Login Page</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="beforeLogin">
+  <nav>
+    <div class="navigationContainer">
+      <img src="halfLogo.jpg" class="halfLogo">
+      <h2>Envision</h2>
+
+      <div class="login">
+        <div class="loginButton">
+          <button onclick=openLoginBlock()>Login</button>
+        </div>
+
+        <div id="loginBlock" class="loginBlock">
+          <form>
+
+            <div class="loginBackground">
+              <img src="https://htmlcolorcodes.com/assets/images/colors/black-color-solid-background-1920x1080.png">  
+            </div>
+
+            <div class="loginBlockContent">
+              <span class="closeLoginBlock" onclick=closeLoginBlock()>&times</span>
+
+              <script>
+                function closeLoginBlock() {
+                  onclick=document.getElementById('loginBlock').style.display='none';
+                }
+              </script>
+              
+              <img src="logo.jpg">
+              <input id="userUsername" type="text" placeholder="Enter Username">
+              <input id ="userPassword" type="text" placeholder="Enter Password">
+              <button onclick=returnLogin() type="button">Log in</button>
+              
+              <label>
+                <input id="rememberMe" type="checkbox" checked="checked"> Remember me
+              </label>
+            </div>
+
+          </form>
+        </div>
+      </div>
+    </div>       
+
+  </nav>
+
+  
+  <h1 class="LoginWelcome">Welcome to Envision!</h1>
+  <div class="image">
+    <img src="Logo Transparent Half White.png" class="transparent">
+  </div>
+  <h2 class="Description">Envision is a website aimed to provide middle and high school students with the guidance they need as they plan for their post secondary education and later careers. By discovering the experiences of the students before you, you can gain knowledge and insights for essential for your future success.</h2>
+  <!--
+  <h2 class="Description">Students are forced to balance their educational pressure along with their social life, extracurriculars and future education planning. To make their lives a bit easier, Envision allows them to find out all they need to know about post secondary in just one website. Envision is a website for students of any age range overwhelmed with where to start in their post secondary research. In Envision, students are given the opportunity to contact past and current students with questions about their post-secondary experience. Younger students, especially first-generation low income students who may not be able to receive sufficient guidance from their families, can learn from the tips provided on this software and contact them for further information. At the end of each study term, colleges and universities have the opportunity to allow their students and alumni to share their post-secondary experiences along with helpful tips to benefit younger students. The students sharing their experience can choose to share their contact information as well. When the students sharing their experience feel that they are too busy to respond to students, they can indicate that they are no longer accepting responses. This allows students to not feel overwhelmed with having to help younger students. Unlike other social media platforms, this platform is dedicated to younger students of any age range seeking guidance and insights.
+</h2>-->
+  <script src="script.js"></script>
+</body>
+
+</html>
